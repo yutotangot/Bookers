@@ -1,0 +1,35 @@
+<html
+  <head>
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
+    <script src="/assets/application-4e370d3723b6f204426a9414077d365ea07814cce5619ae24fb7e581988f19ed.js" data-turbolinks-track="reload"></script>
+    <title>WebCampBackendNew</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="0NfHMRjXK5hNrQAqzDYHD9E9WEHuT/jNcebOQlubyo3c6jciaz0lhG4d7Xq719TjeSFUas3fe+rtZCNP/IaIkw==">
+  </head>
+  <body>
+    <h1>Editing Book</h1>
+    <%= form_with model:@book, local: true do |f| %>
+     <% if @book.errors.any? %>
+         <div id="error_explanation" class="alert alert-danger">
+           error
+           <ul>
+            <% @book.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+           <% end %>
+           </ul>
+        </div>
+     <% end %>
+    <div class="field">
+      <label for="book_title">Title</label>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <label for="book_body">Body</label>
+      <%= f.text_area :body %>
+    </div>
+      <%= f.submit 'Update Book' %>
+    <% end %>  
+   <%= link_to "show", book_path(@book) %>
+   <%= link_to "back", books_path %>
+  </body>
+</html>
