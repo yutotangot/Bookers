@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style type="text/css">.turbolinks-progress-bar {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0076ff;
+      z-index: 9999;
+      transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+      transform: translate3d(0, 0, 0);
+   }</style>
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
+    <script src="/assets/application-4e370d3723b6f204426a9414077d365ea07814cce5619ae24fb7e581988f19ed.js" data-turbolinks-track="reload"></script>
+    <title>WebCampBackendNew</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="wUQZyiIPELIznq/KuSZdCcjDdzF3PvgcnzFy7EqbamjNeenZUeUerhAuQprOx47lYN97GlSuezsDs5/h7YYodg==">
+  </head>
+  <body>
+    <p id="notice"></p>
+    <p><strong>Title:</strong>
+      <%= @book.title %>
+    </p>
+    <p><strong>Body:</strong>
+      <%= @book.body %>
+    </p>
+    <%= link_to "edit", edit_book_path(@book) %>
+    <%= link_to "Back", books_path %>
+  </body>
+</html>
